@@ -25,10 +25,10 @@ const slides = [
   { id: 'active-learning', title: 'Active Automata Learning', component: Slide05ActiveLearning },
   { id: 'obs-table', title: 'Inside the Observation Table', component: Slide06ObservationTable },
   { id: 'tls-fuzzing', title: 'Case 1: Protocol State Fuzzing', component: Slide07TLSFuzzing },
+  { id: 'compiler-connection', title: 'The Compiler Design Connection', component: Slide11CompilerConnection },
   { id: 'passport-case', title: 'Case 2: Biometric e-Passport', component: Slide08PassportCaseStudy },
   { id: 'lsharp-algo', title: 'Frontier: The L# Algorithm', component: Slide09LSharpAlgorithm },
   { id: 'timers-mealy', title: 'Frontier: Mealy with Timers', component: Slide10MealyWithTimers },
-  { id: 'compiler-connection', title: 'The Compiler Design Connection', component: Slide11CompilerConnection },
   { id: 'synthesis', title: 'Synthesis & Core Takeaways', component: Slide11Synthesis },
   { id: 'references', title: 'Academic References', component: Slide12References },
 ];
