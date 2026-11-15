@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { SlideNavigation } from './components/SlideNavigation';
 import { ScaledSlide } from './components/ScaledSlide';
 import { presentationSound } from './lib/presentationSound';
+import { Slide00Welcome } from './slides/Slide00Welcome';
 import { Slide01Cover } from './slides/Slide01Cover';
 import { Slide02Motivation } from './slides/Slide02Motivation';
 import { Slide03FormalDefinition } from './slides/Slide03FormalDefinition';
@@ -18,6 +19,7 @@ import { Slide11Synthesis } from './slides/Slide11Synthesis';
 import { Slide12References } from './slides/Slide12References';
 
 const slides = [
+  { id: 'welcome', title: 'Welcome & Course Intro', component: Slide00Welcome },
   { id: 'cover', title: 'Hero Cover & Overview', component: Slide01Cover },
   { id: 'mealy-vs-moore', title: 'Subway Dilemma: Moore vs. Mealy', component: Slide04MealyVsMoore },
   { id: 'motivation', title: 'The Black-Box Crisis', component: Slide02Motivation },
