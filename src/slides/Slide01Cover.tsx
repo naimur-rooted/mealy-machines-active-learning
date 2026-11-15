@@ -200,7 +200,7 @@ export const Slide01Cover: React.FC = () => {
   return (
     <div 
       onClick={advanceStage}
-      className={`slide-dark-bg w-[1920px] h-[1080px] p-[60px] flex flex-col justify-between relative select-none overflow-hidden ${
+      className={`slide-dark-bg w-[1920px] h-[1080px] px-[40px] pt-[30px] pb-[40px] flex flex-col justify-between relative select-none overflow-hidden ${
         preziStage < 3 ? 'cursor-pointer' : ''
       }`}
     >
@@ -276,7 +276,7 @@ export const Slide01Cover: React.FC = () => {
       {/* ════════════════════════════════════════════════════════════════════════ */}
       {/* MAIN STORYTELLING CONTAINER                                              */}
       {/* ════════════════════════════════════════════════════════════════════════ */}
-      <div className="my-auto max-w-[1800px] z-10 w-full flex flex-col relative min-h-[780px] justify-center mx-auto">
+      <div className="my-auto max-w-[1840px] z-10 w-full flex flex-col relative min-h-[920px] justify-center mx-auto">
 
         {/* 1. STAGE 0: THE INITIAL QUESTION HOOK IN CENTER SCREEN */}
         {preziStage === 0 && (
@@ -518,29 +518,29 @@ export const Slide01Cover: React.FC = () => {
               initial={{ opacity: 0, y: 40, scale: 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ duration: 0.65, ease: presentationEase }}
-              className="w-full p-8 rounded-3xl bg-[#0e1017]/95 border border-white/10 backdrop-blur-2xl relative overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.6)]"
+              className="w-full p-10 rounded-3xl bg-[#0e1017]/95 border-2 border-white/15 backdrop-blur-2xl relative overflow-hidden shadow-[0_20px_70px_rgba(0,0,0,0.8)]"
             >
               {/* Top Control Bar */}
-              <div className="flex items-center justify-between mb-5 pb-4 border-b border-white/[0.08]">
-                <div className="flex items-center gap-4">
-                  <span className="text-xs font-mono font-bold px-3 py-1.5 rounded bg-white/10 text-white/80 uppercase tracking-wider">
+              <div className="flex items-center justify-between mb-6 pb-5 border-b border-white/[0.12]">
+                <div className="flex items-center gap-5">
+                  <span className="text-[14px] font-mono font-bold px-4 py-2 rounded-lg bg-white/10 text-white/90 uppercase tracking-wider">
                     THE ANSWER • CIRCUIT COMPARISON
                   </span>
 
-                  <div className="flex items-center p-1 rounded-full bg-[#161824] border border-white/10">
+                  <div className="flex items-center p-1.5 rounded-full bg-[#161824] border border-white/10">
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
                         setMode('moore');
                         presentationSound.play("click", 0.6);
                       }}
-                      className={`px-5 py-1.5 rounded-full text-xs font-bold transition flex items-center gap-2 cursor-pointer ${
+                      className={`px-6 py-2 rounded-full text-[14px] font-bold transition flex items-center gap-2 cursor-pointer ${
                         mode === 'moore'
                           ? 'bg-red-500/20 text-red-400 border border-red-500/40 shadow-[0_0_15px_rgba(239,68,68,0.2)]'
                           : 'text-white/50 hover:text-white'
                       }`}
                     >
-                      <Clock className="w-3.5 h-3.5" />
+                      <Clock className="w-4 h-4" />
                       <span>The Old Way (Moore Machine)</span>
                     </button>
 
@@ -550,13 +550,13 @@ export const Slide01Cover: React.FC = () => {
                         setMode('mealy');
                         presentationSound.play("click", 0.6);
                       }}
-                      className={`px-5 py-1.5 rounded-full text-xs font-bold transition flex items-center gap-2 cursor-pointer ${
+                      className={`px-6 py-2 rounded-full text-[14px] font-bold transition flex items-center gap-2 cursor-pointer ${
                         mode === 'mealy'
                           ? 'bg-[#f59e0b] text-black shadow-[0_0_20px_rgba(245,158,11,0.4)]'
                           : 'text-white/50 hover:text-white'
                       }`}
                     >
-                      <Zap className="w-3.5 h-3.5 fill-current" />
+                      <Zap className="w-4 h-4 fill-current" />
                       <span>Mealy's Breakthrough (1955)</span>
                     </button>
                   </div>
@@ -568,28 +568,28 @@ export const Slide01Cover: React.FC = () => {
                     setPulseCount(c => c + 1);
                     presentationSound.play("counterTick", 0.8);
                   }}
-                  className="px-5 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-mono text-xs font-bold flex items-center gap-2 transition cursor-pointer border border-white/15"
+                  className="px-6 py-2 rounded-full bg-white/10 hover:bg-white/20 text-white font-mono text-[14px] font-bold flex items-center gap-2.5 transition cursor-pointer border border-white/20 shadow-md"
                 >
-                  <Sparkles className="w-3.5 h-3.5 text-[#f59e0b]" />
+                  <Sparkles className="w-4 h-4 text-[#f59e0b]" />
                   <span>Send Stimulus Pulse</span>
                 </button>
               </div>
 
               {/* Interactive Circuit Canvas: Standard Textbook FSM Architecture */}
-              <div className="relative w-full h-[460px] bg-[#05060a] rounded-3xl border border-white/10 p-8 flex items-center justify-between shadow-[inset_0_2px_40px_rgba(0,0,0,0.8)]">
+              <div className="relative w-full h-[580px] bg-[#05060a] rounded-3xl border border-white/10 p-8 flex items-center justify-between shadow-[inset_0_2px_50px_rgba(0,0,0,0.9)]">
                 
                 {/* 1. INPUT SOURCE (External Stimulus X) */}
-                <div className="w-[220px] h-[210px] rounded-3xl bg-[#121424] border-2 border-[#00f2fe]/60 flex flex-col items-center justify-center text-center p-5 z-10 shadow-[0_0_40px_rgba(0,242,254,0.18)]">
-                  <div className="text-[12px] font-mono text-[#00f2fe] font-extrabold uppercase tracking-widest mb-1">
+                <div className="w-[240px] h-[260px] rounded-3xl bg-[#121424] border-2 border-[#00f2fe]/60 flex flex-col items-center justify-center text-center p-6 z-10 shadow-[0_0_40px_rgba(0,242,254,0.18)]">
+                  <div className="text-[13px] font-mono text-[#00f2fe] font-extrabold uppercase tracking-widest mb-1">
                     INPUT (X)
                   </div>
-                  <div className="text-[24px] font-black text-white leading-tight mt-1">
+                  <div className="text-[28px] font-black text-white leading-tight mt-1">
                     Card Tap / Coin
                   </div>
-                  <div className="text-[14px] font-mono text-white/70 mt-2 font-medium">
+                  <div className="text-[16px] font-mono text-white/70 mt-2 font-medium">
                     External Stimulus
                   </div>
-                  <div className="mt-3 text-[12px] px-3.5 py-1 rounded-full bg-[#00f2fe]/15 text-[#00f2fe] font-mono font-black border border-[#00f2fe]/30">
+                  <div className="mt-4 text-[13px] px-4 py-1.5 rounded-full bg-[#00f2fe]/15 text-[#00f2fe] font-mono font-black border border-[#00f2fe]/30">
                     t = 0.00 ms
                   </div>
                 </div>
@@ -611,31 +611,31 @@ export const Slide01Cover: React.FC = () => {
                   </defs>
 
                   {/* Wire 1: Input (X) into Next-State Logic δ */}
-                  <line x1="250" y1="230" x2="310" y2="230" stroke="#00f2fe" strokeWidth="3" />
-                  <polygon points="310,230 300,225 300,235" fill="#00f2fe" />
+                  <line x1="270" y1="290" x2="330" y2="290" stroke="#00f2fe" strokeWidth="4" />
+                  <polygon points="330,290 318,284 318,296" fill="#00f2fe" />
 
                   {/* Wire 2: Next State D from δ into State Register (Flip-Flops) */}
-                  <line x1="640" y1="230" x2="710" y2="230" stroke="rgba(255,255,255,0.4)" strokeWidth="3" />
-                  <polygon points="710,230 700,225 700,235" fill="rgba(255,255,255,0.7)" />
+                  <line x1="680" y1="290" x2="730" y2="290" stroke="rgba(255,255,255,0.4)" strokeWidth="4" />
+                  <polygon points="730,290 718,284 718,296" fill="rgba(255,255,255,0.7)" />
 
                   {/* Wire 3: Present State Q from Flip-Flops into Output Logic λ */}
-                  <line x1="1040" y1="230" x2="1110" y2="230" stroke="#38bdf8" strokeWidth="3" />
-                  <polygon points="1110,230 1100,225 1100,235" fill="#38bdf8" />
+                  <line x1="1080" y1="290" x2="1130" y2="290" stroke="#38bdf8" strokeWidth="4" />
+                  <polygon points="1130,290 1118,284 1118,296" fill="#38bdf8" />
 
                   {/* Wire 4: Output Z from Output Logic into Gate Actuator */}
-                  <line x1="1440" y1="230" x2="1510" y2="230" stroke={mode === 'mealy' ? "#10b981" : "rgba(255,255,255,0.3)"} strokeWidth="3" />
-                  <polygon points="1510,230 1500,225 1500,235" fill={mode === 'mealy' ? "#10b981" : "rgba(255,255,255,0.5)"} />
+                  <line x1="1480" y1="290" x2="1530" y2="290" stroke={mode === 'mealy' ? "#10b981" : "rgba(255,255,255,0.3)"} strokeWidth="4" />
+                  <polygon points="1530,290 1518,284 1518,296" fill={mode === 'mealy' ? "#10b981" : "rgba(255,255,255,0.5)"} />
 
                   {/* Wire 5: State Register Feedback Loop (Q returns to Next-State Logic δ) */}
                   <path
-                    d="M 875 345 L 875 405 L 475 405 L 475 345"
+                    d="M 905 425 L 905 495 L 505 495 L 505 425"
                     fill="none"
                     stroke="rgba(56,189,248,0.5)"
-                    strokeWidth="3"
-                    strokeDasharray="7 6"
+                    strokeWidth="3.5"
+                    strokeDasharray="8 6"
                   />
-                  <polygon points="475,345 470,355 480,355" fill="#38bdf8" />
-                  <text x="675" y="426" fill="rgba(56,189,248,0.9)" fontSize="13" fontWeight="bold" fontFamily="monospace" textAnchor="middle">
+                  <polygon points="505,425 499,438 511,438" fill="#38bdf8" />
+                  <text x="705" y="520" fill="rgba(56,189,248,0.9)" fontSize="14" fontWeight="bold" fontFamily="monospace" textAnchor="middle">
                     State Feedback Loop: Present State Q(t) fed back into δ
                   </text>
 
@@ -643,27 +643,27 @@ export const Slide01Cover: React.FC = () => {
                   {mode === 'mealy' ? (
                     <>
                       <path
-                        d="M 140 125 L 140 46 L 1275 46 L 1275 115"
+                        d="M 150 160 L 150 60 L 1305 60 L 1305 145"
                         fill="none"
                         stroke="url(#bypassActiveGrad)"
-                        strokeWidth="5"
-                        strokeDasharray="10 8"
+                        strokeWidth="6"
+                        strokeDasharray="12 8"
                         filter="url(#glowEffect)"
                         className="animate-pulse"
                       />
-                      <circle cx="140" cy="125" r="7" fill="#00f2fe" />
-                      <circle cx="1275" cy="115" r="7" fill="#f59e0b" />
-                      <polygon points="1275,115 1269,103 1281,103" fill="#f59e0b" />
+                      <circle cx="150" cy="160" r="8" fill="#00f2fe" />
+                      <circle cx="1305" cy="145" r="8" fill="#f59e0b" />
+                      <polygon points="1305,145 1297,130 1313,130" fill="#f59e0b" />
 
                       {/* Moving Electron Packet along Mealy Bypass */}
                       <motion.circle
-                        r="8"
+                        r="9"
                         fill="#f59e0b"
                         filter="url(#glowEffect)"
-                        initial={{ cx: 140, cy: 125, opacity: 0 }}
+                        initial={{ cx: 150, cy: 160, opacity: 0 }}
                         animate={{
-                          cx: [140, 140, 1275, 1275],
-                          cy: [125, 46, 46, 115],
+                          cx: [150, 150, 1305, 1305],
+                          cy: [160, 60, 60, 145],
                           opacity: [0, 1, 1, 0]
                         }}
                         transition={{
@@ -676,7 +676,7 @@ export const Slide01Cover: React.FC = () => {
                     </>
                   ) : (
                     <path
-                      d="M 140 125 L 140 46 L 1275 46 L 1275 115"
+                      d="M 150 160 L 150 60 L 1305 60 L 1305 145"
                       fill="none"
                       stroke="rgba(239,68,68,0.25)"
                       strokeWidth="3"
@@ -686,58 +686,58 @@ export const Slide01Cover: React.FC = () => {
                 </svg>
 
                 {/* 2. BLOCK A: Combinational Next-State Logic δ(Q, X) */}
-                <div className="w-[330px] h-[230px] rounded-3xl bg-[#121424] border-2 border-white/20 p-5 flex flex-col justify-between z-10 shadow-[0_8px_30px_rgba(0,0,0,0.6)]">
+                <div className="w-[350px] h-[270px] rounded-3xl bg-[#121424] border-2 border-white/20 p-6 flex flex-col justify-between z-10 shadow-[0_8px_30px_rgba(0,0,0,0.6)]">
                   <div className="flex items-center justify-between">
-                    <span className="text-[12px] font-mono font-extrabold text-[#00f2fe] uppercase tracking-wider">
+                    <span className="text-[13px] font-mono font-extrabold text-[#00f2fe] uppercase tracking-wider">
                       COMBINATIONAL
                     </span>
-                    <span className="text-[13px] font-mono px-3 py-1 rounded-md bg-white/10 text-white font-bold border border-white/10">
+                    <span className="text-[14px] font-mono px-3.5 py-1 rounded-md bg-white/10 text-white font-bold border border-white/10">
                       δ( State, Input )
                     </span>
                   </div>
                   <div>
-                    <div className="text-[23px] font-black text-white leading-tight">Next-State Logic</div>
-                    <div className="text-[14px] text-white/80 font-sans mt-2 font-medium leading-snug">
+                    <div className="text-[26px] font-black text-white leading-tight">Next-State Logic</div>
+                    <div className="text-[16px] text-white/85 font-sans mt-2.5 font-medium leading-snug">
                       Silicon logic gates compute next state bits from <strong className="text-white">Q(t)</strong> and <strong className="text-white">X</strong>.
                     </div>
                   </div>
-                  <div className="text-[12px] font-mono text-white/60 border-t border-white/10 pt-2 flex items-center justify-between font-bold">
+                  <div className="text-[13px] font-mono text-white/60 border-t border-white/10 pt-2.5 flex items-center justify-between font-bold">
                     <span>In: X + Q(t)</span>
                     <span className="text-[#00f2fe]">Out: D(t)</span>
                   </div>
                 </div>
 
                 {/* 3. BLOCK B: State Register (Clocked Flip-Flops) */}
-                <div className="w-[330px] h-[230px] rounded-3xl bg-[#0f111d] border-2 border-white/25 p-5 flex flex-col justify-between z-10 shadow-[0_8px_30px_rgba(0,0,0,0.6)]">
+                <div className="w-[350px] h-[270px] rounded-3xl bg-[#0f111d] border-2 border-white/25 p-6 flex flex-col justify-between z-10 shadow-[0_8px_30px_rgba(0,0,0,0.6)]">
                   <div className="flex items-center justify-between">
-                    <span className="text-[12px] font-mono font-extrabold text-white/60 uppercase tracking-wider">
+                    <span className="text-[13px] font-mono font-extrabold text-white/60 uppercase tracking-wider">
                       SYNCHRONOUS
                     </span>
-                    <span className="text-[13px] font-mono px-3 py-1 rounded-md bg-[#38bdf8]/15 text-[#38bdf8] font-bold border border-[#38bdf8]/30">
+                    <span className="text-[14px] font-mono px-3.5 py-1 rounded-md bg-[#38bdf8]/15 text-[#38bdf8] font-bold border border-[#38bdf8]/30">
                       Clock Edge (10 ns)
                     </span>
                   </div>
                   <div>
-                    <div className="text-[23px] font-black text-white leading-tight">State Register</div>
-                    <div className="text-[14px] text-white/80 font-sans mt-2 font-medium leading-snug">
+                    <div className="text-[26px] font-black text-white leading-tight">State Register</div>
+                    <div className="text-[16px] text-white/85 font-sans mt-2.5 font-medium leading-snug">
                       Bank of D Flip-Flops storing current system state: <span className="text-[#38bdf8] font-black">q₀ (IDLE)</span>.
                     </div>
                   </div>
-                  <div className="text-[12px] font-mono text-white/60 border-t border-white/10 pt-2 flex items-center justify-between font-bold">
+                  <div className="text-[13px] font-mono text-white/60 border-t border-white/10 pt-2.5 flex items-center justify-between font-bold">
                     <span>Synchronous Latch:</span>
                     <span className="text-[#38bdf8]">Q(t+1) = D(t)</span>
                   </div>
                 </div>
 
                 {/* Center Top Floating Banner */}
-                <div className="absolute top-[12px] left-[50%] -translate-x-1/2 z-20 pointer-events-none">
+                <div className="absolute top-[16px] left-[50%] -translate-x-1/2 z-20 pointer-events-none">
                   {mode === 'mealy' ? (
-                    <div className="px-6 py-2 rounded-full bg-black/95 border-2 border-[#f59e0b] text-[#f59e0b] text-[13px] font-mono font-black flex items-center gap-2.5 shadow-[0_0_30px_rgba(245,158,11,0.4)] animate-bounce">
+                    <div className="px-7 py-2.5 rounded-full bg-black/95 border-2 border-[#f59e0b] text-[#f59e0b] text-[14px] font-mono font-black flex items-center gap-2.5 shadow-[0_0_35px_rgba(245,158,11,0.5)] animate-bounce">
                       <Zap className="w-4 h-4 fill-current" />
                       <span>THE MEALY BYPASS: INPUT FEEDS OUTPUT LOGIC DIRECTLY (0 ns CLOCK DELAY)</span>
                     </div>
                   ) : (
-                    <div className="px-6 py-2 rounded-full bg-red-950/95 border-2 border-red-500/60 text-red-300 text-[13px] font-mono font-black flex items-center gap-2.5 shadow-[0_0_30px_rgba(239,68,68,0.3)]">
+                    <div className="px-7 py-2.5 rounded-full bg-red-950/95 border-2 border-red-500/60 text-red-300 text-[14px] font-mono font-black flex items-center gap-2.5 shadow-[0_0_35px_rgba(239,68,68,0.4)]">
                       <XCircle className="w-4 h-4 text-red-400" />
                       <span>MOORE ARCHITECTURE: NO BYPASS WIRE (OUTPUT TRAPPED IN STATE FLIP-FLOPS)</span>
                     </div>
@@ -745,16 +745,16 @@ export const Slide01Cover: React.FC = () => {
                 </div>
 
                 {/* 4. BLOCK C: Combinational Output Logic λ */}
-                <div className={`w-[330px] h-[230px] rounded-3xl p-5 flex flex-col justify-between transition-all z-10 ${
+                <div className={`w-[350px] h-[270px] rounded-3xl p-6 flex flex-col justify-between transition-all z-10 ${
                   mode === 'mealy'
                     ? 'bg-[#181b29] border-2 border-[#f59e0b] amber-glow-box shadow-[0_0_45px_rgba(245,158,11,0.35)]'
                     : 'bg-[#10111c] border-2 border-white/15'
                 }`}>
                   <div className="flex items-center justify-between">
-                    <span className="text-[12px] font-mono font-extrabold text-[#f59e0b] uppercase tracking-wider">
+                    <span className="text-[13px] font-mono font-extrabold text-[#f59e0b] uppercase tracking-wider">
                       OUTPUT LOGIC
                     </span>
-                    <span className={`text-[13px] font-mono px-3 py-1 rounded-md font-bold border ${
+                    <span className={`text-[14px] font-mono px-3.5 py-1 rounded-md font-bold border ${
                       mode === 'mealy' 
                         ? 'bg-[#f59e0b]/15 text-[#f59e0b] border-[#f59e0b]/40' 
                         : 'bg-white/10 text-white/80 border-white/10'
@@ -763,14 +763,14 @@ export const Slide01Cover: React.FC = () => {
                     </span>
                   </div>
                   <div>
-                    <div className="text-[23px] font-black text-white leading-tight">Output Logic</div>
-                    <div className="text-[14px] text-white/80 font-sans mt-2 font-medium leading-snug">
+                    <div className="text-[26px] font-black text-white leading-tight">Output Logic</div>
+                    <div className="text-[16px] text-white/85 font-sans mt-2.5 font-medium leading-snug">
                       {mode === 'mealy' 
                         ? 'Evaluates State (Q) + Input (X) immediately via silicon gates.'
                         : 'Evaluates State (Q) only; updates exclusively after clock tick.'}
                     </div>
                   </div>
-                  <div className="text-[12px] font-mono border-t border-white/10 pt-2 flex items-center justify-between font-bold">
+                  <div className="text-[13px] font-mono border-t border-white/10 pt-2.5 flex items-center justify-between font-bold">
                     <span className="text-white/60">Speed:</span>
                     <span className={mode === 'mealy' ? 'text-[#10b981]' : 'text-red-400'}>
                       {mode === 'mealy' ? '⚡ 0 ns Instant Reaction' : '⏳ 1-Cycle Clock Lag'}
@@ -779,20 +779,20 @@ export const Slide01Cover: React.FC = () => {
                 </div>
 
                 {/* 5. OUTPUT ACTUATOR (Z) */}
-                <div className={`w-[220px] h-[210px] rounded-3xl border-2 flex flex-col items-center justify-center text-center p-5 z-10 transition-all ${
+                <div className={`w-[240px] h-[260px] rounded-3xl border-2 flex flex-col items-center justify-center text-center p-6 z-10 transition-all ${
                   mode === 'mealy'
                     ? 'bg-[#10b981]/15 border-[#10b981] shadow-[0_0_40px_rgba(16,185,129,0.3)]'
                     : 'bg-red-950/25 border-red-500/40'
                 }`}>
-                  <div className={`text-[12px] font-mono font-extrabold uppercase tracking-widest mb-1 ${
+                  <div className={`text-[13px] font-mono font-extrabold uppercase tracking-widest mb-1 ${
                     mode === 'mealy' ? 'text-[#10b981]' : 'text-red-400'
                   }`}>
                     OUTPUT (Z)
                   </div>
-                  <div className="text-[24px] font-black text-white leading-tight mt-1">
+                  <div className="text-[28px] font-black text-white leading-tight mt-1">
                     Gate Unlocks
                   </div>
-                  <div className="text-[14px] font-mono mt-2 font-black">
+                  <div className="text-[16px] font-mono mt-3 font-black">
                     {mode === 'mealy' ? (
                       <span className="text-[#10b981] drop-shadow-[0_0_10px_rgba(16,185,129,0.5)]">⚡ Zero Latency</span>
                     ) : (
@@ -803,23 +803,23 @@ export const Slide01Cover: React.FC = () => {
               </div>
 
               {/* Dynamic Explanation Footer */}
-              <div className="mt-5 p-4 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-between text-[14px] text-[#a1a1aa] font-mono">
+              <div className="mt-6 p-5 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-between text-[16px] text-[#a1a1aa] font-mono">
                 {mode === 'mealy' ? (
                   <div className="flex items-center gap-3">
-                    <CheckCircle2 className="w-5 h-5 text-[#10b981] shrink-0" />
-                    <span className="text-white text-[15px] font-medium font-sans">
+                    <CheckCircle2 className="w-6 h-6 text-[#10b981] shrink-0" />
+                    <span className="text-white text-[17px] font-medium font-sans">
                       <strong className="text-[#10b981] font-mono">Textbook Mealy Architecture:</strong> External input <strong>X</strong> bypasses the clocked flip-flop register and feeds directly into <strong>Output Logic λ(Q, X)</strong>, producing immediate silicon reaction with <strong className="text-[#f59e0b]">zero clock delay</strong>.
                     </span>
                   </div>
                 ) : (
                   <div className="flex items-center gap-3">
-                    <XCircle className="w-5 h-5 text-red-400 shrink-0" />
-                    <span className="text-white text-[15px] font-medium font-sans">
+                    <XCircle className="w-6 h-6 text-red-400 shrink-0" />
+                    <span className="text-white text-[17px] font-medium font-sans">
                       <strong className="text-red-400 font-mono">Textbook Moore Architecture:</strong> Output logic strictly computes <strong>λ(Q)</strong>. Any input change must first clock into the state register before the output can react, creating a mandatory <strong className="text-red-400">1-cycle delay</strong>.
                     </span>
                   </div>
                 )}
-                <div className="text-right text-[#f59e0b] font-mono font-black text-[16px] shrink-0 ml-4">
+                <div className="text-right text-[#f59e0b] font-mono font-black text-[18px] shrink-0 ml-4">
                   {mode === 'mealy' ? 'Z = λ( Q , X )' : 'Z = λ( Q )'}
                 </div>
               </div>
