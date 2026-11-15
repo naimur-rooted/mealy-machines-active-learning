@@ -13,6 +13,7 @@ import { Slide07TLSFuzzing } from './slides/Slide07TLSFuzzing';
 import { Slide08PassportCaseStudy } from './slides/Slide08PassportCaseStudy';
 import { Slide09LSharpAlgorithm } from './slides/Slide09LSharpAlgorithm';
 import { Slide10MealyWithTimers } from './slides/Slide10MealyWithTimers';
+import { Slide11CompilerConnection } from './slides/Slide11CompilerConnection';
 import { Slide11Synthesis } from './slides/Slide11Synthesis';
 import { Slide12References } from './slides/Slide12References';
 
@@ -27,6 +28,7 @@ const slides = [
   { id: 'passport-case', title: 'Case 2: Biometric e-Passport', component: Slide08PassportCaseStudy },
   { id: 'lsharp-algo', title: 'Frontier: The L# Algorithm', component: Slide09LSharpAlgorithm },
   { id: 'timers-mealy', title: 'Frontier: Mealy with Timers', component: Slide10MealyWithTimers },
+  { id: 'compiler-connection', title: 'The Compiler Design Connection', component: Slide11CompilerConnection },
   { id: 'synthesis', title: 'Synthesis & Core Takeaways', component: Slide11Synthesis },
   { id: 'references', title: 'Academic References', component: Slide12References },
 ];
